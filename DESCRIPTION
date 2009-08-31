@@ -1,7 +1,7 @@
 Package: bdoc
 Type: Package
 Title: Bayesian Discrete Ordered Classification of DNA Barcodes
-Version: 1.0
+Version: 1.1
 Date: 2009-08-31
 Author: Michael Anderson
 Maintainer: Michael Anderson <mpa@ksu.edu>
@@ -9,6 +9,6 @@ Description: This package contains a function that will classify DNA
         barcodes as well as a few test and reference data sets.
 License: GPL (>= 2)
 LazyLoad: yes
-Packaged: Mon Sep 21 15:11:43 2009; Mike
+Packaged: Thu Oct 8 14:35:18 2009; Mike
 Repository: CRAN
-Date/Publication: 2009-09-22 08:22:22
+Date/Publication: 2009-10-09 06:55:03

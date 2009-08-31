@@ -15,7 +15,7 @@ from a species not contained in the reference data set.
 \tabular{ll}{
 Package: \tab bdoc\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
+Version: \tab 1.1\cr
 Date: \tab 2009-08-31\cr
 License: \tab GPL (version 2 or later)\cr
 LazyLoad: \tab yes\cr

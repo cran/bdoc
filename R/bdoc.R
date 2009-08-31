@@ -170,8 +170,8 @@ priors <- dirichlet.prior(rep(1,s.num))$theta
     date14<-Sys.time()
 
 date10<-Sys.time()
-    dyn.load(paste("bdoc2", .Platform$dynlib.ext, sep = ""))
-    dyn.load(paste("bdoc1", .Platform$dynlib.ext, sep = ""))
+    #dyn.load(paste("bdoc2", .Platform$dynlib.ext, sep = ""))
+    #dyn.load(paste("bdoc1", .Platform$dynlib.ext, sep = ""))
     for (k in 1:testk) {
         #bp <- testdata[k, 3:ncol(testdata)]
         ifelse(is.vector(testdata)==TRUE,bp<-testdata[3:length(testdata)],bp <- testdata[k, 3:ncol(testdata)])
@@ -185,7 +185,7 @@ date10<-Sys.time()
               as.integer(trC),
               posteriors=numeric(s.num*testp),
               q=as.integer(0),
-              bar2=numeric(testp),PACKAGE="bdoc2")
+              bar2=numeric(testp),PACKAGE="bdoc")
           
 
           post.mat<-matrix(res$posteriors,s.num)
@@ -198,7 +198,7 @@ date10<-Sys.time()
               as.integer(trC),
               posteriors=numeric(s.num*testp),
               q=as.integer(0),
-              bar2=numeric(testp),PACKAGE="bdoc1")
+              bar2=numeric(testp),PACKAGE="bdoc")
           
 
           post.mat<-matrix(res$posteriors,s.num)
@@ -223,8 +223,8 @@ date10<-Sys.time()
 
 date11<-Sys.time()
 
-    dyn.unload(paste("bdoc2", .Platform$dynlib.ext, sep = ""))
-    dyn.unload(paste("bdoc1", .Platform$dynlib.ext, sep = ""))
+    #dyn.unload(paste("bdoc2", .Platform$dynlib.ext, sep = ""))
+    #dyn.unload(paste("bdoc1", .Platform$dynlib.ext, sep = ""))
 
     date2 <- Sys.time()
     tottime <- date2 - date1
