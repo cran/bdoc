@@ -59,18 +59,32 @@ testdata<-battestdata1
 #the first two columns need to be removed as these will usually not 
 #be known.
 
-\donttest{
-result<-bdoc(traindata,testdata[,-c(1:2)])  #after this executes, plots of type
+#A quick view of how bdoc performs using the first 10 nucleotide 
+#positions of the DNA barcodes.  NOTE: This is just for demonstrating
+#bdoc usage in a shorter time frame than the entire data set would 
+#require. See the commented example below for bdoc performance on all 
+#nucleotide positions.
+
+result<-bdoc(traindata[,1:12],testdata[,-c(1:2,13:661)])  #after this executes, plots of type
                                             #plot.file names "seq1", "seq2", 
                                             #and so on can be found in the 
                                             #folder identified by getwd().
 
-result$priors
+
+#Performance of bdoc on the training and test data sets using all nucleotides can be seen using the following.
+
+#result<-bdoc(traindata,testdata[,-c(1:2)])  #after this executes, plots of type
+                                            #plot.file names "seq1", "seq2", 
+                                            #and so on can be found in the 
+                                            #folder identified by getwd().
+
+
+#result$priors			#displays the priors used for classification
 
 result$species.class           #gives the matrix of species assignments
                                #and probabilities.
 
-result$posteriors[[1]]$post }   #gives the matrix of posterior probabilities
+#result$posteriors[[1]]$post    #gives the matrix of posterior probabilities
                                #at each position for barcode 1.  Change 
                                #posteriors[[1]] to posteriors[[2]] for the 
                                #posteriors for barcode 2, etc.
